@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonr.tres" type="DynamicFont" id=1]
+[ext_resource path="res://small.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Button.gd" type="Script" id=3]
+[ext_resource path="res://Button2.gd" type="Script" id=4]
+[ext_resource path="res://bg.png" type="Texture" id=5]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 192.202, 194.793 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="bg"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -435.165
+margin_top = -421.261
+margin_right = -43.1651
+margin_bottom = -366.261
+custom_fonts/font = ExtResource( 1 )
+text = "Game Over!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="bg"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -341.665
+margin_top = -343.165
+margin_right = -137.665
+margin_bottom = -323.165
+custom_fonts/font = ExtResource( 2 )
+text = "Play Again"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="bg"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -341.665
+margin_top = -304.209
+margin_right = -137.665
+margin_bottom = -284.209
+custom_fonts/font = ExtResource( 2 )
+text = "Quit"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+margin_left = -21.9627
+margin_top = -19.4678
+margin_right = 427.037
+margin_bottom = 413.532
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="bg/Button" to="bg/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="bg/Button2" to="bg/Button2" method="_on_Button2_pressed"]
